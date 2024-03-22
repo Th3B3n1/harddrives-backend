@@ -1,15 +1,16 @@
 import express from "express";
-import https from "https";
+//import https from "https";
+import http from "http";
 import { readFileSync } from "fs";
 import mysql from 'mysql2';
 import bodyParser from "body-parser";
 import cors from 'cors';
 
 const app = express();
-const server = https.createServer({
+const server = http/*s*/.createServer(/*{
     key: readFileSync("certFiles/keyfile.key"),
     cert: readFileSync("certFiles/certFile.crt")
-}, app);
+},*/ app);
 const db = mysql.createPool({
     host: 'localhost',
     user: 'root',
